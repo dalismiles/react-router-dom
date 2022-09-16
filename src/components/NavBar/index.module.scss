@@ -1,0 +1,33 @@
+@import "../../styles/_variables";
+@import "../../styles/_mixins";
+
+.Navbar {
+  @include box-model(0, 0, 100vw, 200px);
+  @include flex-element(row, space-around, center);
+
+  background-color: $primary-color;
+  color: $secondary-color;
+
+  .companyLogo {
+    @include flex-element(row, center, center, nowrap, 0.8rem);
+    @include form-text(3rem, normal, bold);
+
+    img {
+      @include box-model(0, 0, 5rem);
+    }
+  }
+
+  ul {
+    @include flex-element(row, space-evenly, center, nowrap, 1.2rem);
+    li {
+      list-style-type: none;
+
+      a {
+        @include form-text(1rem, normal, bold);
+        text-decoration: none;
+        color: $quaternary-color;
+      }
+    }
+  }
+}
+

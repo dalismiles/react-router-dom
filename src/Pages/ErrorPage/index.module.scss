@@ -1,0 +1,6 @@
+@import "../../styles/_mixins";
+
+.error {
+  @include box-model();
+  @include flex-element(row, center, center);
+}
