@@ -2,4 +2,13 @@
 @import "../../styles/_mixins";
 
 .RecipeIngredients {
+  li {
+    .Ingredient {
+      color: $secondary-color;
+    }
+
+    .Measure {
+      color: $primary-color;
+    }
+  }
 }

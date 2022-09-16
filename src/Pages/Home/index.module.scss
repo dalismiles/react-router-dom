@@ -1,0 +1,9 @@
+@import "../../styles/_variables";
+@import "../../styles/_mixins";
+
+.Home {
+  .buttons {
+    @include box-model(2rem);
+    @include flex-element(row, center, stretch, nowrap, 1rem);
+  }
+}

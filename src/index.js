@@ -1,5 +1,4 @@
-import React from "react";
-import { StrictMode } from "react";
+import React, { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import {
   RouterProvider,
@@ -8,7 +7,6 @@ import {
 } from "react-router-dom";
 import Home from "./Pages/Home";
 import Category from "./Pages/Category";
-import Recipe from "./Pages/Recipe";
 import ErrorPage from "./Pages/ErrorPage";
 import RecipeIngredients from "./components/RecipeIngredients";
 import RecipeInstructions from "./components/RecipeInstructions";
@@ -21,6 +19,8 @@ import { ENDPOINTS } from "./api/endpoints.js";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
+
+const LazyRecipe = React.lazy(() => import("./Pages/Recipe"));
 
 const router = createBrowserRouter([
   {
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/catalogo",
-        element: <Navigate to={"/"} />,
+        element: <Navigate to={"/page=1"} />,
       },
       {
         path: "/catalogo/:categoryName",
@@ -50,7 +50,11 @@ const router = createBrowserRouter([
           },
           {
             path: ":recipeName/:id",
-            element: <Recipe />,
+            element: (
+              <Suspense fallback="loading recipe...">
+                <LazyRecipe />
+              </Suspense>
+            ),
             children: [
               { path: "", element: <Navigate to={"istruzioni"} /> },
               { path: "ingredienti", element: <RecipeIngredients /> },
@@ -73,6 +77,5 @@ root.render(
     <RouterProvider router={router} />
   </StrictMode>
 );
-
 
 // const LazyRecipe = React.lazy(() => import('./pages/Recipe/Recipe.jsx'));

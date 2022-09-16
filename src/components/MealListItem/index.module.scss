@@ -1,14 +1,12 @@
 @import "../../styles/_variables";
 @import "../../styles/_mixins";
 
-.CategoryListItem {
+.MealListItem {
+  @include box-model(0, 0.5rem 0.5rem 0 0.5rem, auto, 8rem, 0, 0.8rem);
+  @include flex-element(row, flex-start, center, nowrap, 3rem);
+  @include element-position(relative);
+
   border: 0.1rem solid $primary-color;
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 3rem;
-  padding: 0.5rem;
 
   &:hover {
     background: #eee;
@@ -16,10 +14,11 @@
 
   .thumbnail {
     aspect-ratio: 1/1;
-    width: 100%;
+    height: 8rem;
     object-fit: contain;
     object-position: center;
-    width: 300px;
+    border-radius: 0.9rem;
+
     &-wrapper {
       flex: 0 0 3rem;
     }
@@ -27,11 +26,12 @@
 
   .content {
     flex: 1;
+    color: $primary-color;
   }
 
   .title {
     line-height: 1;
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.8rem;
   }
 
   .description {
@@ -39,11 +39,7 @@
   }
 
   .link {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    @include element-position(absolute, 0, 0, 0, 0);
     opacity: 0;
   }
 }

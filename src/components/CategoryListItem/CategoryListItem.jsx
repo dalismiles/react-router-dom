@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './category-list-item.module.scss';
+
+import styles from './index.module.scss';
 
  const CategoryListItem = (props) => {
   const { category } = props;

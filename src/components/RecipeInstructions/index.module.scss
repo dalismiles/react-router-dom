@@ -1,4 +1,6 @@
 @import "../../styles/_mixins";
 
 .RecipeInstructions {
+    @include box-model(0, 0 4rem 0 0);
+    text-align: justify;
 }

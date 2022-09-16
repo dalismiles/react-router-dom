@@ -1,11 +1,13 @@
-import React from 'react';
-import CategoryListItem from '../CategoryListItem';
-import styles from './index.module.scss'
- const CategoryList = (props) => {
+import React from "react";
+import CategoryListItem from "../CategoryListItem";
+
+import styles from "./index.module.scss";
+
+const CategoryList = (props) => {
   const { categories = [] } = props;
 
   return (
-    <section >
+    <section>
       <ul className={styles.CategoryList}>
         {categories.map((category) => (
           <CategoryListItem key={category.idCategory} category={category} />
@@ -15,5 +17,4 @@ import styles from './index.module.scss'
   );
 };
 
-
-export default CategoryList
+export default CategoryList;

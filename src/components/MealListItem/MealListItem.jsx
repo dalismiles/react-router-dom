@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./meal-list-item.module.scss";
+
+import styles from "./index.module.scss";
 
 const MealListItem = (props) => {
   const { meal = {}, categoryName = "" } = props;

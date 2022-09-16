@@ -43,7 +43,7 @@ export const Home = () => {
           </Await>
         </Suspense>
       </div>
-      <div>
+      <div className={styles.buttons}>
         <button disabled={page==1} onClick={handlePageChange.bind(this, -1)}>Prev</button>
         <button disabled={page==3} onClick={handlePageChange.bind(this, +1)}>Next</button>
       </div>

@@ -1,0 +1,44 @@
+@import "../../styles/_variables";
+@import "../../styles/_mixins";
+
+.CategoryListItem {
+  @include box-model(0, 1rem, auto, 8rem, 0, 0.8rem);
+  @include flex-element(row, flex-start, center, nowrap, 3rem);
+  @include element-position(relative);
+
+  border: 0.1rem solid $primary-color;
+
+  &:hover {
+    background: #eee;
+  }
+
+  .thumbnail {
+    aspect-ratio: 1/1;
+    height: 8rem;
+    object-fit: contain;
+    object-position: center;
+
+    &-wrapper {
+      flex: 0 0 3rem;
+    }
+  }
+
+  .content {
+    flex: 1;
+    color: $primary-color;
+  }
+
+  .title {
+    line-height: 1;
+    margin: 0;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .link {
+    @include element-position(absolute, 0, 0, 0, 0);
+    opacity: 0;
+  }
+}

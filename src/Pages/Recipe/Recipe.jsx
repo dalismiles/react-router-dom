@@ -10,9 +10,9 @@ export const Recipe = (props) => {
   const recipe = data?.meals?.at(0) ?? null;
 
   const tabs = [
-    { label: "Ricetta", path: "./istruzioni" },
-    { label: "Ingredienti", path: "./ingredienti" },
-    { label: "YouTube", path: "./youtube" },
+    { label: "Recipe", path: "./istruzioni" },
+    { label: "Ingredients", path: "./ingredienti" },
+    { label: "Video", path: "./youtube" },
   ];
 
   if (!data || loading) {
@@ -23,7 +23,7 @@ export const Recipe = (props) => {
 
   return (
     <>
-      <div className={styles.SingleRecipe}>
+      <div className={styles.Recipe}>
         <header>
           <div>
             <div>
@@ -31,9 +31,8 @@ export const Recipe = (props) => {
                 <Link to={`/catalogo/${categoryName}`}>{categoryName}</Link>
               </h2>
               <h1 className={styles.titleRecipe}>{recipeName}</h1>
-              <figure>
-                <img width={100} src={recipe.strMealThumb} alt={recipeName} />
-              </figure>
+
+              <img width={100} src={recipe.strMealThumb} alt={recipeName} />
             </div>
           </div>
         </header>

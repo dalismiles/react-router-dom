@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { useOutletContext } from "react-router-dom";
+
 import styles from "./index.module.scss";
 
 const RecipeIngredients = () => {
@@ -13,7 +14,12 @@ const RecipeIngredients = () => {
           <Fragment key={index}>
             {recipe[`strIngredient${index}`]?.length ? (
               <li>
-                {recipe[`strIngredient${index}`]}:{recipe[`strMeasure${index}`]}
+                <span className={styles.Ingredient}>
+                  {recipe[`strIngredient${index}`]} :
+                </span>
+                <span className={styles.Measure}>
+                  {recipe[`strMeasure${index}`]}
+                </span>
               </li>
             ) : null}
           </Fragment>

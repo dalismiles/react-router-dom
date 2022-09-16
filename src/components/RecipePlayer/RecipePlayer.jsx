@@ -16,7 +16,7 @@ const RecipePlayer = (props) => {
         height="315"
         title="recipevideo"
         allowtransparency="true"
-        frameborder="0"
+        frameBorder="0"
       />
     </div>
   );

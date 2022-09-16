@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import Logo from "../../images/book.svg";
+
 import styles from "./index.module.scss";
 
 const Navbar = () => {
-  const links = [{ href: "/", label: "HOME", title: "Vai alla home" }];
+  const links = [{ href: "/?page=1", label: "HOME", title: "Vai alla home" }];
 
   return (
     <nav className={styles.Navbar}>

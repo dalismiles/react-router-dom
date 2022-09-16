@@ -1,2 +1,3 @@
-import CategoryList from './CategoryList'
-export default CategoryList
+import CategoryList from "./CategoryList";
+
+export default CategoryList;
